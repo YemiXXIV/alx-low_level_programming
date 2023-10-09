@@ -16,7 +16,7 @@ digit1++)
 num2 <= 9;
 num2++)
 {for
-(digit2 = digit1;
+(digit2 = digit1 + 1;
 digit2 <= 9;
 digit2++)
 {putchar(num1 + '0');
