@@ -5,9 +5,9 @@
  ** Return: Always 0 (success)
  **/
 int main(void)
-{int number = 0;
-while (number < 10)
-{putchar(number + '0');
-number++; }
-putchar('\n');
-return (0); }
+{int numberz = 0;
+while (numberz < 10)
+{putchar (numberz + '0');
+numberz++;}
+putchar ('\n');
+return (0);}
