@@ -2,12 +2,11 @@
 
 /**
  * main - print _putchar
- **
- * Return: 0 (success)
- **/
+ *
+ * Return: Always 0
+ */
 
 int main(void)
-int c;
 { _putchar('_');
 _putchar('p');
 _putchar('u');
@@ -17,4 +16,6 @@ _putchar('h');
 _putchar('a');
 _putchar('p');
 _putchar('\n');
- return (0);}
+ 
+return (0);
+}
