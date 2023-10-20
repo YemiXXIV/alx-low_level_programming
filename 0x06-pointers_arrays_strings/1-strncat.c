@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- *_strncat - A function that concatenates two strings
- *@dest: First string
- *@src: Second string
- *@n: number ofbytes to concatenate
+ * _strncat - A function that concatenates two strings
+ * @dest: First string
+ * @src: Second string
+ * @n: number ofbytes to concatenate
  *
  * Return:dest.
  */
@@ -19,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
 		k++;
 	}
 
-	for (o = 0; o < n && *src != '\0'; k++)
+	for (o = 0; o < n && *src != '\0'; o++)
 	{
 		*k = *src;
 		src++;
