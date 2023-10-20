@@ -5,30 +5,26 @@ include "main.h"
  * @dest: The destination string
  * @src: The Source string
  *
- * Return: A pointer to the string dest
+ * Return: A string.
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int i = 0;
-	int j = 0;
+	char *i = dest;
 
-	while (dest[i] != '\0')
+	while (*dest != '\0')
 	{
-		i++;
+	       dest++;
 	}
 
-	while (src[j] != '\0')
+	while (*src != '\0')
 	{
-		j++;
+		*dest = *src;
+		src++;
+		dest++;
 	}
 
-	for (int k = 0; k < j; k++)
-	{
-		dest[i + k] = src[k];
-	}
+	*dest = '\0';
 
-	dest[i + j] = '\0';
-
-	return (dest);
+	return (i);
 }
