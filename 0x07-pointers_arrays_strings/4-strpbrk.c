@@ -4,26 +4,26 @@
  *_strpbrk - A function that searches a string
  * for any of a set of bytes.
  *@s: String to be searched
- *@accept:
+ *@accept: bytes
  *
- * Return: length of prefix
+ * Return: length of prefix string
  */
 
 char *_strpbrk(char *s, char *accept)
 {
-	while (*s != '\0')
-	{
-		char *a = accept;
+	int a;
 
-		while (*a != '\0')
+	while (*s)
+	{
+		for (a = 0; accept[a] != '\0'; a++)
 		{
-			if (*s == *a)
+			if (*s == accept[a])
 			{
 				return (s);
 			}
-			a++;
 		}
 		s++;
 	}
-	return (NULL);
+
+	return (0);
 }
