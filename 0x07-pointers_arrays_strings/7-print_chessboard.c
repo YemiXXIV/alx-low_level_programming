@@ -4,6 +4,7 @@
 /**
  * print_chessboard - A functions that prints a chessboard
  * @a: 2D array
+ *
  * Return: void
  */
 
