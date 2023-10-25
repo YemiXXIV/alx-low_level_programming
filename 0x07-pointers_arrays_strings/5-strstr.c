@@ -6,7 +6,7 @@
  *@needle: Substring to be found
  *
  * Return: Pointer to the located substring
- * or NULL if substring is not found.
+ * or 0 if substring is not found.
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -14,14 +14,15 @@ char *_strstr(char *haystack, char *needle)
 	while (*haystack)
 	{
 		char *start_haystack = haystack;
+		char *temp_needle = needle;
 
-		while (*needle == *haystack && *needle)
+		while (*temp_needle && (*haystack == *needle))
 		{
 			haystack++;
-			needle++;
+			temp_needle++;
 		}
 
-		if (!*needle)
+		if (!*temp_needle)
 			return (start_haystack);
 		haystack = start_haystack + 1;
 	}
