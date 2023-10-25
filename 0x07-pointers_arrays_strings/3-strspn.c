@@ -13,26 +13,23 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int c = 0;
-	int m;
+	int matched = 0;
 
-	while (*s)
+	while (*s && matched)
 	{
-		m = 0;
-		while (*accept)
+		matched = 0;
+		for (char *a = accept; *a; a++)
 		{
-			if (*s == *accept)
+			if (*s == *a)
 			{
-				m = 1;
+				count++;
+				matched = 1;
 				break;
 			}
-			accept++;
 		}
 
-		if (!m)
-			break;
-
-		c++;
-		s++;
+		if (matched)
+			s++
 	}
 
 	return (c);
