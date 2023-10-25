@@ -12,25 +12,31 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int c = 0;
-	int matched = 1;
+	unsigned int i, j, k;
 
-	while (*s && matched)
+	i = j = k = 0;
+
+	if (*s == '\0' || *accept == '\0')
 	{
-		matched = 0;
-		for (char *a = accept; *a; a++)
-		{
-			if (*s == *a)
-			{
-				count++;
-				matched = 1;
-				break;
-			}
-		}
-
-		if (matched)
-			s++;
+		return (k);
 	}
 
-	return (c);
+	while (s[j] != ',')
+	{
+		i = 0;
+
+		while (accept[i] != '\0')
+		{
+			if (s[j] == accept[i])
+			{
+				k++;
+			}
+			i++;
+		}
+		j++;
+	}
+
+	return (k);
+
 }
+
