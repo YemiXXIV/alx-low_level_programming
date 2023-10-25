@@ -22,10 +22,10 @@ char *_strstr(char *haystack, char *needle)
 			temp_needle++;
 		}
 
-		if (*temp_needle)
-			return (start_haystack);
+		if (!*temp_needle)
+			return (0);
 		haystack = start_haystack + 1;
 	}
 
-	return (0);
+	return (start_haystack);
 }
