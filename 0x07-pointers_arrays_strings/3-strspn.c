@@ -6,14 +6,14 @@
  * @s: String to be searched
  * @accept: String containing characters to match against
  *
- * Return:Number of bytes in the initial segment of s
+ * Return: Number of bytes in the initial segment of s
  * which contains only bytes from accept
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int c = 0;
-	int matched = 0;
+	int matched = 1;
 
 	while (*s && matched)
 	{
@@ -29,7 +29,7 @@ unsigned int _strspn(char *s, char *accept)
 		}
 
 		if (matched)
-			s++
+			s++;
 	}
 
 	return (c);
