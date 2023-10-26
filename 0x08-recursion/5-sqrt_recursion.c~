@@ -1,0 +1,45 @@
+#include "main.h"
+
+/**
+ * _sqrt_recursion - A function that
+ * returns the natural square root of a number
+ * @n: The integer
+ *
+ * Return: if n is not a natural square root, return -1
+ * The natural square root of n if otherwise
+ */
+
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+	{
+		return (-1);
+	}
+
+	if (n == 0 || n == 1)
+	{
+		return (n);
+	}
+
+	else
+	{
+		return (sqrt_recursive(n, n / 2));
+	}
+/**
+ * sqrt_recursive - Recursive function to find the square root.
+ * @n: Number to find the square root
+ * @g: Square root guesses
+ *
+ * Return: The square root if found, -1 if not
+ */
+	int sqrt_recursive(int n, int b)
+	{
+		int s = (b + n / b) / 2;
+
+		if (s == b || s > b)
+		{
+			return (b);
+		}
+
+		return sqrt_recursive(n, s);
+	}
