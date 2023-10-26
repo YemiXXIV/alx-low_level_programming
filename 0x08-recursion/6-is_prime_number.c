@@ -18,7 +18,7 @@ int _prime_number(int n, int r)
 			return (0);
 	}
 	{
-		return (_prime(n, r + 1));
+		return (_prime_number(n, r + 1));
 	}
 }
 
