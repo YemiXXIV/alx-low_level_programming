@@ -7,8 +7,7 @@
  * @age: Age of the dog
  * @owner: Owner of the dog
  *
- * Return: Pointer to the newly created dog,
- * or NULL if allocation fails.
+ * Return: NULL if allocation fails.
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -50,7 +49,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		o[l] = owner[l];
 	new_dog->name = n;
 	new_dog->age = age;
-	new_dog->owner = 0;
+	new_dog->owner = o;
 
 	return (new_dog);
 }
