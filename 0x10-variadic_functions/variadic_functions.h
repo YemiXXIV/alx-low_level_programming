@@ -11,7 +11,7 @@ void print_numbers(const char *seperator, const unsigned int n, ...);
 void print_strings(const char *seperator, const unsigned int n, ...);
 void print_all(const char *const format, ...);
 
-tpedef struct print
+typedef struct print
 {
 	char *s
 	void (*f_pr)(va_list args);
