@@ -14,7 +14,7 @@ void print_all(const char *const format, ...);
 tpedef struct print
 {
 	char *s
-	void (*f_pr)(va_list a);
-} print;
+	void (*f_pr)(va_list args);
+} funcprint;
 
 #endif
