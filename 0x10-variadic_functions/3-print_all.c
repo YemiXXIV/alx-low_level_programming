@@ -62,7 +62,7 @@ void print_string(va_list arg)
 
 void print_all(const char * const format, ...)
 {
-	va_list args;
+	va_list arg;
 	int i, j;
 	char *s = "";
 
@@ -87,12 +87,12 @@ void print_all(const char * const format, ...)
 		if (j < 4)
 		{
 			printf("%s", s);
-			data[j].f_pr(args);
+			data[j].f_pr(arg);
 			s = ", ";
 		}
 		i++;
 	}
 	printf("\n");
 
-	va_end(args);
+	va_end(arg);
 }
