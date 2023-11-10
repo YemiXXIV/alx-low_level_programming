@@ -66,7 +66,7 @@ void print_all(const char * const format, ...)
 	int i, j;
 	char *s = "";
 
-	funcprint data[] = {
+	print_d data[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},

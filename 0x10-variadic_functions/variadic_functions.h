@@ -11,10 +11,10 @@ void print_numbers(const char *seperator, const unsigned int n, ...);
 void print_strings(const char *seperator, const unsigned int n, ...);
 void print_all(const char *const format, ...);
 
-typedef struct print
+typedef struct print_d
 {
-	char *s
-	void (*f_pr)(va_list args);
-} funcprint;
+	char *c
+	void (*f_pr)(va_list a);
+} print_d;
 
 #endif
