@@ -43,14 +43,14 @@ void print_float(va_list arg)
 
 void print_string(va_list arg)
 {
-	char *str = va_arg(arg, char *);
+	char *s = va_arg(arg, char *);
 
-	if (str == NULL)
+	if (s == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", str);
+	printf("%s", s);
 }
 
 /**
@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	int i, j;
-	char *s = "";
+	char *sep = "";
 
 	print_d data[] = {
 		{"c", print_char},
@@ -86,9 +86,9 @@ void print_all(const char * const format, ...)
 
 		if (j < 4)
 		{
-			printf("%s", s);
+			printf("%s", sep);
 			data[j].f_pr(arg);
-			s = ", ";
+			sep = ", ";
 		}
 		i++;
 	}
