@@ -7,7 +7,7 @@
 
 typedef struct print_d
 {
-        char *c
+        char *c;
         void (*f_pr)(va_list a);
 } print_d;
 
