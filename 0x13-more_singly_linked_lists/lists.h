@@ -6,7 +6,7 @@
 #include <string.h>
 
 /**
- * struct listint_l - singly linked list
+ * struct listint_s - singly linked list
  * @n: integer
  * @node: points to the next node
  *
@@ -15,10 +15,10 @@
  */
 
 
-typedef struct listint_l
+typedef struct listint_s
 {
 	int n;
-	struct listint_l *node;
+	struct listint_s *node;
 } listint_t;
 
 
