@@ -47,7 +47,7 @@ char *file_from(char *arg1, char *buffer)
 
 int main(int argc, char **argv)
 {
-	int f_t, c_t, count;
+	int fs, cs, count;
 	ssize_t w;
 	char *r;
 	char buffer[4096];
@@ -58,8 +58,8 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	r = file_from(argv[1], buffer);
-	f_t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (f_t == -1)
+	fs = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fs == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
@@ -67,16 +67,16 @@ int main(int argc, char **argv)
 	while (r[count])
 		count++;
 
-	w = write(f_t, r, count);
+	w = write(fs, r, count);
 	if (w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Cant write to %s\n", argv[2]);
 		exit(99);
 	}
-	c_t = close(f_t);
-	if (c_t == -1)
+	cs = close(fs);
+	if (cs == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_t);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fs);
 		exit(100);
 	}
 	return (1);
