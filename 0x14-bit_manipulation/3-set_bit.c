@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * set_bit - A function that sets the value 
+ * set_bit - A function that sets the value
  * of a bit to 1 at a given index
  * @n: Pointer to the nsigned long integer
  * @index: The index of the bit to set starting from 0
