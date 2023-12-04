@@ -10,7 +10,7 @@
 
 int sum_listint(listint_t *head)
 {
-	int sum = 0;
+	unsigned int sum = 0;
 	listint_t *currrent = head;
 
 	if (head == NULL)
