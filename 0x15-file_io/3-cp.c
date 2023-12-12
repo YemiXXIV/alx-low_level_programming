@@ -3,12 +3,12 @@
 /**
  * file_from - A function to open and read a file
  * @arg1: Pointer to the file
- * @buffer: Pointer to the temporary buffer
+ * @buf: Pointer to the temporary buffer
  *
  * Return: A pointer to the buffer
  */
 
-char *file_from(char *arg1, char *buffer)
+char *file_from(char *arg1, char *buf)
 {
 	int f, cf;
 	ssize_t p, b = 0;
@@ -19,7 +19,7 @@ char *file_from(char *arg1, char *buffer)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	while ((p = read(f, buffer + b, 1024)) > 0)
+	while ((p = read(f, buf + b, 1024)) > 0)
 	{
 		b = b + p;
 	}
@@ -34,7 +34,7 @@ char *file_from(char *arg1, char *buffer)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
 		exit(100);
 	}
-	return (buffer);
+	return (buf);
 }
 
 /**
@@ -50,14 +50,14 @@ int main(int argc, char **argv)
 	int fs, cs, count;
 	ssize_t w;
 	char *r;
-	char buffer[4096];
+	char buf[4096];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	r = file_from(argv[1], buffer);
+	r = file_from(argv[1], buf);
 	fs = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fs == -1)
 	{
